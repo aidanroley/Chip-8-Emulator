@@ -18,19 +18,21 @@ class Memory:
 0xF0, 0x80, 0x80, 0x80, 0xF0, # C
 0xE0, 0x90, 0x90, 0x90, 0xE0, # D
 0xF0, 0x80, 0xF0, 0x80, 0xF0, # E
-0xF0, 0x80, 0xF0, 0x80, 0x80]  # F
+0xF0, 0x80, 0xF0, 0x80, 0x80] # F
    
   def getfile(self, filename):
     with open(filename, 'rb') as rom_file:
       data = rom_file.read()
       for i, byte in enumerate(data):
-       print(f"Index: {i}, Value: {byte}")
+       self.memoryArray[i+0x200] = byte
+       print(f"Index: {i+0x200}, Value: {byte}")
                 # Load the byte into memory
    
 
   def load_fontset(self):
-    for i in range (len(self.font_set)):
-        self.memoryArray[i] = self.font_set[i] #first 80 entries in the array is font_set
+    for i, font_byte in enumerate(self.font_set):
+        self.memoryArray[i+80] = font_byte #first 80 entries in the array is font_set
+        print(f"Index: {i+80}, Value: {font_byte}")
 
   
                 

@@ -1,6 +1,8 @@
 import pygame
+import time
 from display import Display
 from memory import Memory
+import CPU
 
 class chip8emu:
    def __init__(self):
@@ -9,6 +11,7 @@ class chip8emu:
     self.memory = Memory()
     filename = "C:\\Users\\bridg\\Downloads\\15 Puzzle [Roger Ivie].ch8"
     self.memory.getfile(filename)
+    self.memory.load_fontset()
 
    def run(self):
     isRunning = True

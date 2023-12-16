@@ -7,7 +7,14 @@ class CPU:
         self.stack_pointer = -1
         self.pc = initial_pc
         self.index_register = 0
+        self.delay_timer = 0
+        self.sound_timer = 0
 
+    def decrement_timers(self):
+        if self.delay_timer > 0:
+            self.delay_timer -= 1
+        if self.sound_timer > 0:
+            self.sound_timer -= 1
 
 
     def push(self, value):
