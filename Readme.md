@@ -4,14 +4,14 @@ To install and test this correctly, you need to install a few packages first. It
 To set one up run
 
 ```
-python -m venv /path/to/new/virtual/environment
+python -m venv venv
 ```
 
 You will have to activate it every time. 
 On, mac/linux, to activate it, run
 
 ```
-source myvenv/bin/activate
+source venv/bin/activate
 ```
 
 On, windows, to activate it, run
@@ -22,7 +22,7 @@ venv\Scripts\activate.bat
 
 Then, you can install the following
 
-pygame
+## pygame
 
 ``````
 pip install pygame
