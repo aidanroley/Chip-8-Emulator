@@ -33,6 +33,11 @@ class Memory:
     for i, font_byte in enumerate(self.font_set):
         self.memoryArray[i+80] = font_byte #first 80 entries in the array is font_set
         print(f"Index: {i+80}, Value: {font_byte}")
+  
+  def getmemory(self):
+    return self.memoryArray
+  
+  
 
   
                 
