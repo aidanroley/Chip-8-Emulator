@@ -6,11 +6,13 @@ from memory import Memory
 from CPU import CPU
 
 class chip8emu:
+
+   home = str(Path.home())
    def __init__(self):
     pygame.init()
     display = Display(64, 32, 10)
     self.memory = Memory()
-    filename = "C:\\Users\\bridg\\Downloads\\IBM Logo.ch8"
+    filename = Home + "\\Downloads\\IBM Logo.ch8"
     self.memory.getfile(filename)
     self.memory.load_fontset()
     memory_array = self.memory.getmemory()
