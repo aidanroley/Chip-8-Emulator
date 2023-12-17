@@ -4,22 +4,27 @@ from display import Display
 from memory import Memory
 from CPU import CPU
 
-width = 64
-height = 32
-scale = 10
+
 class chip8emu:
+   width = 64
+   height = 32
+   scale = 10
 
    def __init__(self):
-    pygame.init()
-    screen = Display.displayset(width, height, scale)
-    self.memory = Memory()
-    home = str(Path.home())
-    data_folder = str(Path("/Downloads/IBM Logo.ch8"))
-    filename = home + data_folder
-    self.memory.getfile(filename)
-    self.memory.load_fontset()
-    memory_array = self.memory.getmemory()
-    self.cpu = CPU(memory_array, screen)
+      pygame.init()
+      home = str(Path.home())
+      data_folder = input("Enter path to .ch8 file from your user directory (press enter for default)\n")
+      if (data_folder == ""):
+         data_folder = str(Path("/Downloads/IBM Logo.ch8"))
+      else:
+         data_folder = str(Path("/" + data_folder))
+      screen = Display.display_set(self.width, self.height, self.scale)
+      self.memory = Memory()
+      filename = home + data_folder
+      self.memory.getfile(filename)
+      self.memory.load_fontset()
+      memory_array = self.memory.getmemory()
+      self.cpu = CPU(memory_array, screen)
 
    def run(self):
       isRunning = True
@@ -28,10 +33,7 @@ class chip8emu:
             if event.type == pygame.QUIT:
                isRunning = False
 
-    ###  
-       
+if (__name__ == '__main__'):
 
-      
-
-emulator = chip8emu()
-emulator.run()
+   emulator = chip8emu()
+   emulator.run()

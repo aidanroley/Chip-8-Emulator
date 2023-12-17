@@ -23,30 +23,30 @@ class InstructionsReader:
    def decodeAndExecute(fetched, first, x, y, n, nn, nnn, screen):
      global pc
      ##print(fetched)
-     def clearscreen(screen):
-        global pc
-        screen.fill((255,0,0))
-        pygame.display.flip()
+   def clearscreen(screen):
+      global pc
+      screen.fill((255,0,0))
+      pygame.display.flip()
 
-     def jump(fetched, nnn):
-        global pc
-        Memory.pc = int(nnn, 16)
+   def jump(fetched, nnn):
+      global pc
+      Memory.pc = int(nnn, 16)
 
-     def Set(x, nn):
-       Memory.vregister[int(x, 16)] = int(nn, 16)
+   def Set(x, nn):
+      Memory.vregister[int(x, 16)] = int(nn, 16)
     
-     if first.isdigit() and n.isdigit():
+      if first.isdigit() and n.isdigit():
         first_num = int(first)
         n_num = int(n)
         if (first_num & n_num) == 0:
          clearscreen(screen)
 
-     if first.isdigit():
+      if first.isdigit():
         first_num = int(first)
         if (first_num) == 1:
          jump(fetched, nnn)
 
-     if first.isdigit():
+      if first.isdigit():
         first_num = int(first)
         if (first_num) == 6:
            Set(x, nn)
