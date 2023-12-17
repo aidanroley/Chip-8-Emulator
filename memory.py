@@ -1,5 +1,8 @@
 import pygame
+
 class Memory:
+  pc = 0x200
+  vregister = [0] * 16
   def __init__(self):
    self.memoryArray = [0] * 4096
    self.font_set = [

@@ -1,7 +1,5 @@
 from pathlib import Path
 import pygame
-import time
-import threading
 from display import Display
 from memory import Memory
 from CPU import CPU
