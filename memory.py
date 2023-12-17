@@ -25,14 +25,14 @@ class Memory:
       data = rom_file.read()
       for i, byte in enumerate(data):
        self.memoryArray[i+0x200] = byte
-       print(f"Index: {i+0x200}, Value: {byte}")
+       ##print(f"Index: {i+0x200}, Value: {byte}")
                 # Load the byte into memory
    
 
   def load_fontset(self):
     for i, font_byte in enumerate(self.font_set):
         self.memoryArray[i+80] = font_byte #first 80 entries in the array is font_set
-        print(f"Index: {i+80}, Value: {font_byte}")
+        ##print(f"Index: {i+80}, Value: {font_byte}")
   
   def getmemory(self):
     return self.memoryArray

@@ -1,3 +1,4 @@
+from pathlib import Path
 import pygame
 import time
 import threading
@@ -5,16 +6,21 @@ from display import Display
 from memory import Memory
 from CPU import CPU
 
+width = 64
+height = 32
+scale = 10
 class chip8emu:
    def __init__(self):
     pygame.init()
-    display = Display(64, 32, 10)
+    screen = Display.displayset(width, height, scale)
     self.memory = Memory()
-    filename = "C:\\Users\\bridg\\Downloads\\IBM Logo.ch8"
+    home = str(Path.home())
+    data_folder = str(Path("/Downloads/IBM Logo.ch8"))
+    filename = home + data_folder
     self.memory.getfile(filename)
     self.memory.load_fontset()
     memory_array = self.memory.getmemory()
-    self.cpu = CPU(memory_array)
+    self.cpu = CPU(memory_array, screen)
 
    def run(self):
     isRunning = True
