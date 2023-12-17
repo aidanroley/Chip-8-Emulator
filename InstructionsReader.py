@@ -1,6 +1,7 @@
 import pygame
 class InstructionsReader:
 
+
    def convertHex(memoryArray):
     hex_strings = [hex(element) for element in memoryArray]
     hex_string = ' '.join(hex_strings)

@@ -10,6 +10,7 @@ width = 64
 height = 32
 scale = 10
 class chip8emu:
+
    def __init__(self):
     pygame.init()
     screen = Display.displayset(width, height, scale)
@@ -23,11 +24,11 @@ class chip8emu:
     self.cpu = CPU(memory_array, screen)
 
    def run(self):
-    isRunning = True
-    while isRunning:
-       for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-          isRunning = False
+      isRunning = True
+      while isRunning:
+         for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+               isRunning = False
 
     ###  
        
