@@ -249,16 +249,8 @@ class InstructionsReader:
                     chip8_screen.set_at((screen_x, screen_y), (0, 0, 0))
                 else:
                     chip8_screen.set_at((screen_x, screen_y), (255, 255, 255))
-    
-    # Update the display here or outside this function depending on your design
-       # scaled_surface = pygame.transform.scale(chip8_screen, (64 * 10, 32 * 10))
-        #screen.blit(scaled_surface, (0, 0))
-        #pygame.display.flip()
+       pygame.display.flip()
 
-
-
-
-                
 
      if first.isdigit() and n.isdigit():
         first_num = int(first)

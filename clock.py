@@ -6,3 +6,4 @@ class Clock:
     main_clock = pygame.time.Clock()
     last_timer_update = pygame.time.get_ticks()
     clock = pygame.time.Clock()
+    beep_sound = 1

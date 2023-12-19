@@ -19,7 +19,8 @@ class CPU:
                 hexArray[i] = '0' + hexArray[i]
         
         while Memory.pc < len(hexArray):
-            
+            #self.profile = cProfile.Profile()
+            #self.profile.enable()
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                      pygame.quit()
@@ -28,13 +29,10 @@ class CPU:
                         Clock.delay_timer -= 1
                      
 
-
             fetched, first, x, y, n, nn, nnn = InstructionsReader.fetch(hexArray)
-            beep_sound = pygame.mixer.Sound("C:\\Users\\bridg\\Downloads\\bruh.wav")
+            
             current_time = pygame.time.get_ticks()
-            if current_time - Clock.last_timer_update >= 1000 / 60:
-                #if Clock.delay_timer > 0:
-                    #Clock.delay_timer -= 1
+            if current_time - Clock.last_timer_update >= 1000 / 600:
                 if Clock.sound_timer > 0:
                     Clock.sound_timer -= 1
             
@@ -42,24 +40,21 @@ class CPU:
 
             if Clock.sound_timer > 0:
                 if not pygame.mixer.get_busy():  # Check if a sound is already playing
-                    beep_sound.play()  # Play the beep sound
-                else:
-                    beep_sound.stop()
-            #print(Memory.pc)
-            print(fetched)
+                    Clock.beep_sound.play()  # Play the beep sound
+            else:
+                   Clock.beep_sound.stop()
                     
-            self.profile = cProfile.Profile()
-            self.profile.enable()
+            
             InstructionsReader.decodeAndExecute(hexArray, fetched, first, x, y, n, nn, nnn, chip8_screen, screen)
-            self.profile.disable()
-            stats = pstats.Stats(self.profile).sort_stats('cumtime')
-           # stats.print_stats()
+            #self.profile.disable()
+            #tats = pstats.Stats(self.profile).sort_stats('cumtime')
+            #stats.print_stats()
 
-            Clock.main_clock.tick(60)
+            Clock.main_clock.tick(450)
             #fps = Clock.main_clock.get_fps()
             #print(f"Current FPS: {fps}")
             
-            pygame.display.flip()
+            #pygame.display.flip()
   
 
 
