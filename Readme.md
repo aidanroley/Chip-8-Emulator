@@ -45,3 +45,4 @@ Then, you can install the following:
 ``````
 pip install pygame
 ``````
+You might also have to install pygame in the compiler as well.
