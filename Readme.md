@@ -11,38 +11,12 @@
 
 ## Installation
 
-### Folder Placement
+Download the Game_ROMS.zip file and the .exe file from the release
 
-Make sure to put the Game_ROMS folder provided into Downloads for it to work correctly.
+##### Folder Placement
 
-### Set up
+Make sure to extract the Game_ROMS.zip into a folder placed in Downloads for it to work correctly
 
-To install and test this correctly, you need to install a few packages first. It is optimal to do this in a virtual environment.
+##### Set up
 
-To set it up run the following:
-
-```
-python -m venv venv
-```
-
-You will have to activate it every time you wish to run the program. 
-On Mac/Linux to activate it, run the following:
-
-```
-source venv/bin/activate
-```
-
-On Windows:
-
-```
-venv\Scripts\activate.bat
-```
-
-Then, you can install the following:
-
-### pygame
-
-``````
-pip install pygame
-``````
-You might also have to install pygame in the compiler as well.
+Run the .exe file
