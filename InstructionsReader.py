@@ -1,6 +1,5 @@
 import pygame
 from memory import Memory
-from display import Display
 from clock import Clock
 from keymap import Keymap
 import random
