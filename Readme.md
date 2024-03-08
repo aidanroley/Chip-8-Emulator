@@ -11,7 +11,7 @@
 
 ## Installation
 
-Clone repostiory and run the chip8emu.py file
+Clone repostiory and run the chip8emu.py file after installing Python and Pygame.
 
 ##### Folder Placement
 
