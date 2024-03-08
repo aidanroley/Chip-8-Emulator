@@ -11,12 +11,8 @@
 
 ## Installation
 
-Download the Game_ROMS.zip file and the .exe file from the release
+Clone repostiory and run the chip8emu.py file
 
 ##### Folder Placement
 
 Make sure to extract the Game_ROMS.zip into a folder placed in Downloads for it to work correctly
-
-##### Set up
-
-Run the .exe file
